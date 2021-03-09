@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>快速上手 | NuomiJS</title>
+    <meta name="description" content="React + Redux + Router最佳实践">
+    <link rel="icon" href="/images/logo.png">
+  <link rel="stylesheet" href="/styles/page.css">
+    
+    <link rel="preload" href="/assets/css/0.styles.61144e05.css" as="style"><link rel="preload" href="/assets/js/app.29414a18.js" as="script"><link rel="preload" href="/assets/js/2.e86ea714.js" as="script"><link rel="preload" href="/assets/js/11.4501403d.js" as="script"><link rel="prefetch" href="/assets/js/10.35678af6.js"><link rel="prefetch" href="/assets/js/12.c5d7d73a.js"><link rel="prefetch" href="/assets/js/3.637a2434.js"><link rel="prefetch" href="/assets/js/4.570df549.js"><link rel="prefetch" href="/assets/js/5.9d386738.js"><link rel="prefetch" href="/assets/js/6.ec184412.js"><link rel="prefetch" href="/assets/js/7.46dd1ba0.js"><link rel="prefetch" href="/assets/js/8.08d6e524.js"><link rel="prefetch" href="/assets/js/9.7920cf89.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.61144e05.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">NuomiJS</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/guide/" class="nav-link router-link-active">指南</a></div><div class="nav-item"><a href="/api/" class="nav-link">API</a></div><div class="nav-item"><a href="https://github.com/nuomijs/nuomi/blob/master/CHANGELOG.md" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  更新日志
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/nuomijs/nuomi" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/guide/" class="nav-link router-link-active">指南</a></div><div class="nav-item"><a href="/api/" class="nav-link">API</a></div><div class="nav-item"><a href="https://github.com/nuomijs/nuomi/blob/master/CHANGELOG.md" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  更新日志
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/nuomijs/nuomi" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>指南</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/" class="sidebar-link">介绍</a></li><li><a href="/guide/quick-start.html" class="active sidebar-link">快速上手</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/guide/quick-start.html#安装脚手架" class="sidebar-link">安装脚手架</a></li><li class="sidebar-sub-header"><a href="/guide/quick-start.html#创建应用" class="sidebar-link">创建应用</a></li><li class="sidebar-sub-header"><a href="/guide/quick-start.html#安装依赖包" class="sidebar-link">安装依赖包</a></li><li class="sidebar-sub-header"><a href="/guide/quick-start.html#编写nuomiprops" class="sidebar-link">编写nuomiProps</a></li><li class="sidebar-sub-header"><a href="/guide/quick-start.html#编写ui组件" class="sidebar-link">编写UI组件</a></li><li class="sidebar-sub-header"><a href="/guide/quick-start.html#渲染组件" class="sidebar-link">渲染组件</a></li><li class="sidebar-sub-header"><a href="/guide/quick-start.html#使用路由" class="sidebar-link">使用路由</a></li></ul></li><li><a href="/guide/functions.html" class="sidebar-link">功能速查</a></li><li><a href="/guide/examples.html" class="sidebar-link">例子</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="快速上手"><a href="#快速上手" aria-hidden="true" class="header-anchor">#</a> 快速上手</h1> <p>在此之前你需要安装 <a href="https://nodejs.org" target="_blank" rel="noopener noreferrer">nodejs<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> ，包管理工具使用的是 <a href="https://www.yarnpkg.com/lang/en/" target="_blank" rel="noopener noreferrer">yarn<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> ，你也可以使用 <a href="https://www.npmjs.com/" target="_blank" rel="noopener noreferrer">npm<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 来安装包。</p> <h2 id="安装脚手架"><a href="#安装脚手架" aria-hidden="true" class="header-anchor">#</a> 安装脚手架</h2> <p>初始化项目用的是 <a href="https://create-react-app.dev/" target="_blank" rel="noopener noreferrer">create-react-app<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，你也可以使用自己喜欢的脚手架。</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">yarn</span> global <span class="token function">add</span> create-react-app
+</code></pre></div><h2 id="创建应用"><a href="#创建应用" aria-hidden="true" class="header-anchor">#</a> 创建应用</h2> <div class="language-sh extra-class"><pre class="language-sh"><code>create-react-app new-project
+<span class="token builtin class-name">cd</span> new-project
+<span class="token function">yarn</span> <span class="token function">eject</span>
+</code></pre></div><p>通过 <code>eject</code> 释放配置文件方便修改。</p> <h2 id="安装依赖包"><a href="#安装依赖包" aria-hidden="true" class="header-anchor">#</a> 安装依赖包</h2> <p>安装框架 <code>nuomi</code> 和组件库 <a href="https://ant.design/index-cn" target="_blank" rel="noopener noreferrer">antd<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>。</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">yarn</span> <span class="token function">add</span> nuomi antd
+</code></pre></div><p>安装 <code>babel-plugin-import</code> 插件用来按需加载 <code>antd</code> 的脚本和样式，具体详见<a href="https://ant.design/docs/react/introduce-cn#%E7%A4%BA%E4%BE%8B" target="_blank" rel="noopener noreferrer">官网<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>。</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">yarn</span> <span class="token function">add</span> babel-plugin-import --dev
+</code></pre></div><p>编辑 <code>package.json</code> 使插件生效。</p> <div class="language-diff extra-class"><pre class="language-diff"><code>&quot;babel&quot;: {
+<span class="token unchanged">  &quot;presets&quot;: [
+    &quot;react-app&quot;
+  ],
+</span><span class="token inserted-sign inserted">+ &quot;plugins&quot;: [
++   [
++     &quot;import&quot;,
++     {
++       &quot;libraryName&quot;: &quot;antd&quot;,
++       &quot;style&quot;: &quot;css&quot;
++     }
++   ]
++ ]
+</span>}
+</code></pre></div><p>让项目运行起来</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">yarn</span> start
+</code></pre></div><br>
+接下来使用框架开发一个应用，需求是展示一个列表，有删除功能。
+<h2 id="编写nuomiprops"><a href="#编写nuomiprops" aria-hidden="true" class="header-anchor">#</a> 编写nuomiProps</h2> <p>为什么取名叫 <code>nuomiProps</code> 稍后见分晓。</p> <p>新增 <code>src/list.js</code></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> List <span class="token keyword">from</span> <span class="token string">'./List'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  state<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    dataSource<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  reducers<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">updateState</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span> payload</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token operator">...</span>state<span class="token punctuation">,</span> <span class="token operator">...</span>payload <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  effects<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token keyword">async</span> <span class="token function">$getList</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 模拟请求</span>
+      <span class="token keyword">const</span> dataSource <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          <span class="token function">res</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+            <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">'react'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">'redux'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">'router'</span> <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        type<span class="token punctuation">:</span> <span class="token string">'updateState'</span><span class="token punctuation">,</span>
+        payload<span class="token punctuation">:</span> <span class="token punctuation">{</span> dataSource <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">remove</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> name <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> <span class="token punctuation">{</span> dataSource <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        type<span class="token punctuation">:</span> <span class="token string">'updateState'</span><span class="token punctuation">,</span>
+        payload<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          dataSource<span class="token punctuation">:</span> dataSource<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">v</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> v<span class="token punctuation">.</span>name <span class="token operator">!==</span> name<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">onInit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      type<span class="token punctuation">:</span> <span class="token string">'$getList'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>该文件导出一个对象，<code>state</code> 定义初始状态；<code>reducers</code> 控制状态的更新；<code>effects</code> 管理业务逻辑；<code>onInit</code> 业务初始化。可以通过给 <code>effects</code> 中的方法添加 <code>$</code> 前缀可以做到程序 <code>auto loading</code> 功能。</p> <h2 id="编写ui组件"><a href="#编写ui组件" aria-hidden="true" class="header-anchor">#</a> 编写UI组件</h2> <p>新增 <code>src/List.jsx</code></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Table<span class="token punctuation">,</span> Button <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'antd'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> useConnect <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'nuomi'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">List</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> dataSource<span class="token punctuation">,</span> loadings <span class="token punctuation">}</span><span class="token punctuation">,</span> dispatch<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useConnect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">const</span> <span class="token function-variable function">remove</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> name <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      type<span class="token punctuation">:</span> <span class="token string">'remove'</span><span class="token punctuation">,</span>
+      payload<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        name
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">const</span> columns <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+    title<span class="token punctuation">:</span> <span class="token string">'框架'</span><span class="token punctuation">,</span>
+    dataIndex<span class="token punctuation">:</span> <span class="token string">'name'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    title<span class="token punctuation">:</span> <span class="token string">'操作'</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">render</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token parameter">text<span class="token punctuation">,</span> record</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token operator">&lt;</span>Button onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">remove</span><span class="token punctuation">(</span>record<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>删除<span class="token operator">&lt;</span><span class="token operator">/</span>Button<span class="token operator">&gt;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>Table
+      loading<span class="token operator">=</span><span class="token punctuation">{</span><span class="token operator">!</span><span class="token operator">!</span>loadings<span class="token punctuation">.</span>$getList<span class="token punctuation">}</span>
+      rowKey<span class="token operator">=</span><span class="token string">&quot;name&quot;</span>
+      dataSource<span class="token operator">=</span><span class="token punctuation">{</span>dataSource<span class="token punctuation">}</span>
+      columns<span class="token operator">=</span><span class="token punctuation">{</span>columns<span class="token punctuation">}</span>
+    <span class="token operator">/</span><span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> List<span class="token punctuation">;</span>
+</code></pre></div><p>通过 <code>useConnect</code> 可以让 <code>List</code> 组件和 <code>nuomiProps</code> 关联起来，但此时 <code>List</code> 还无法正常渲染。</p> <h2 id="渲染组件"><a href="#渲染组件" aria-hidden="true" class="header-anchor">#</a> 渲染组件</h2> <p>编辑 <code>src/App.js</code></p> <div class="language-diff extra-class"><pre class="language-diff"><code>import React from 'react';
+<span class="token inserted-sign inserted">+ import { Nuomi } from 'nuomi';
+</span><span class="token deleted-sign deleted">- import logo from './logo.svg';
+- import './App.css';
+</span><span class="token inserted-sign inserted">+ import list from './list';
++ import List from 'List';
+</span>
+function App() {
+<span class="token unchanged">  return (
+</span><span class="token inserted-sign inserted">+   &lt;Nuomi {...list}&gt;
++     &lt;List /&gt;
++   &lt;/Nuomi&gt;
+</span><span class="token deleted-sign deleted">-   &lt;div className=&quot;App&quot;&gt;
+-     &lt;header className=&quot;App-header&quot;&gt;
+-       &lt;img src={logo} className=&quot;App-logo&quot; alt=&quot;logo&quot; /&gt;
+-       &lt;p&gt;
+-         Edit &lt;code&gt;src/App.js&lt;/code&gt; and save to reload.
+-       &lt;/p&gt;
+-       &lt;a
+-         className=&quot;App-link&quot;
+-         href=&quot;https://reactjs.org&quot;
+-         target=&quot;_blank&quot;
+-         rel=&quot;noopener noreferrer&quot;
+-       &gt;
+-         Learn React
+-       &lt;/a&gt;
+-     &lt;/header&gt;
+-   &lt;/div&gt;
+</span><span class="token unchanged">  );
+</span>}
+
+export default App;
+</code></pre></div><p>可以看到刚才在 <code>list.js</code> 中定义的对象就是 <code>Nuomi</code> 组件的 <code>props</code>，这就是取名为 <code>nuomiPorps</code> 的原因，独立成一个文件可以方便维护。</p> <p>最终效果如下：</p> <div><img src="/images/demo.gif" alt="demo"></div> <p>利用 <code>Nuomi</code> 组件的特性与路由结合可以快速构建单页应用，根据自己喜好可以选择 <code>react-router</code> 也可以
+是 <code>reach-router</code>。框架自身也内置了一套路由系统，相较于前2者与 <code>Nuomi</code> 结合起来使用会更加方便。</p> <h2 id="使用路由"><a href="#使用路由" aria-hidden="true" class="header-anchor">#</a> 使用路由</h2> <p>编辑 <code>src/App.js</code></p> <div class="language-diff extra-class"><pre class="language-diff"><code>import React from 'react';
+<span class="token deleted-sign deleted">- import { Nuomi } from 'nuomi';
+</span><span class="token inserted-sign inserted">+ import { Router, Route } from 'nuomi';
+</span>import list from './list';
+import List from './List';
+
+function App() {
+<span class="token unchanged">  return (
+</span><span class="token deleted-sign deleted">-   &lt;Nuomi {...list}&gt;
+-     &lt;List /&gt;
+-   &lt;/Nuomi&gt;
+</span><span class="token inserted-sign inserted">+    &lt;Router&gt;
++     &lt;Route path=&quot;/&quot; {...list}&gt;
++       &lt;List /&gt;
++     &lt;/Route&gt;
++     &lt;Route path=&quot;/list&quot; {...list}&gt;
++       &lt;List /&gt;
++     &lt;/Route&gt;
++   &lt;/Router&gt;
+</span><span class="token unchanged">  );
+</span>}
+
+export default App;
+</code></pre></div><p>刷新页面可以看到与之前无任何区别，可以通过 <code>http://127.0.0.1:3000/#list</code> 访问第二个页面。这里定义了2个 <code>Route</code> 组件，同时引用了 <code>list</code>，但是2个组件的状态是互相独立的，通过这一点可以很容易做到大模块的复用。</p> <p>上面代码中有一处是可以优化，<code>Route</code> 的子组件 <code>List</code> 其实也是 <code>props</code>，可以把它放到 <code>list.js</code> 中。</p> <p>编辑 <code>src/App.js</code></p> <div class="language-diff extra-class"><pre class="language-diff"><code>import React from 'react';
+import { Router, Route } from 'nuomi';
+import list from './list';
+<span class="token deleted-sign deleted">- import List from './List';
+</span>
+function App() {
+<span class="token unchanged">  return (
+    &lt;Router&gt;
+</span><span class="token deleted-sign deleted">-     &lt;Route path=&quot;/&quot; {...list}&gt;
+-       &lt;List /&gt;
+-     &lt;/Route&gt;
+-     &lt;Route path=&quot;/list&quot; {...list}&gt;
+-       &lt;List /&gt;
+-     &lt;/Route&gt;
+</span><span class="token inserted-sign inserted">+     &lt;Route path=&quot;/&quot; {...list} /&gt;
++     &lt;Route path=&quot;/list&quot; {...list} /&gt;
+</span><span class="token unchanged">    &lt;/Router&gt;
+  );
+</span>}
+
+export default App;
+</code></pre></div><p>编辑 <code>src/list.js</code></p> <div class="language-diff extra-class"><pre class="language-diff"><code>import React from 'react';
+<span class="token inserted-sign inserted">+ import List from './List';
+</span>
+export default {
+<span class="token unchanged">  ...
+</span><span class="token inserted-sign inserted">+ render() {
++   return &lt;List /&gt;;
++ },
+</span>}
+</code></pre></div><p>可以使用 <code>children</code> 属性渲染子组件，也可以使用 <code>render</code> 函数来渲染组件，共存时 <code>children</code> 不会被渲染，在 <code>render</code> 中可以通过 <code>this.children</code> 访问子组件，这一点可以用来做路由嵌套。</p> <p>框架的特性远不及此，更多功能等待你去发现。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/guide/" class="prev router-link-active">
+          介绍
+        </a></span> <span class="next"><a href="/guide/functions.html">
+          功能速查
+        </a>
+        →
+      </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.29414a18.js" defer></script><script src="/assets/js/2.e86ea714.js" defer></script><script src="/assets/js/11.4501403d.js" defer></script>
+  </body>
+</html>
